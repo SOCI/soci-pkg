@@ -1,11 +1,9 @@
-soci-pkg
-========
+# soci-pkg #
 
 SOCI packaging configurations
 
 
-Debian
-______
+## Debian ##
 
 Just copy the debian/ directory to your soci sources directory and run dpkg-buildpackage -rfakeroot
 
@@ -26,23 +24,20 @@ Packages, required for build:
 * unixodbc-dev
 
 
-Fedora/CentOS/RedHat
-____________________
+## Fedora/CentOS/RedHat ##
 
 The RPM specification file is reproduced here, in the fedora/ directory,
 for convenient reason. However, the master is hosted by Fedora:
 http://pkgs.fedoraproject.org/cgit/soci.git/tree/soci.spec
 
 If you want to build the package on Fedora/CentOS/RedHat:
-```
-shell
+```shell
 sudo yum -y install fedora-packager
 sudo yum -y groupinstall development
 rpmdev-setuptree
 ```
 Change the ```%packager``` variable in the ```~/.rpmmacros``` configuration file.
-```
-shell
+```shell
 SOCI_VER=3.2.0
 cd ~/rpmbuild/SPECS
 wget http://pkgs.fedoraproject.org/cgit/soci.git/tree/soci.spec
@@ -53,11 +48,9 @@ rpmbuild -bs soci.spec
 rpmbuild -ba soci.spec
 ```
 
-Note:
------
+### Note ###
 On CentOS, you have to enable the EPEL repository, with something like:
-```
-shell
+```shell
 rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 ```
