@@ -1,5 +1,104 @@
-soci (3.1.0+git2013015-5) unstable; urgency=low
+soci (3.1.0+git20130218-1) UNRELEASED; urgency=low
 
-  * Debian packaging for SOCI
+  * New maintainer (Closes: #520746) 
+  * New upstream version (Closes: #583846)
+    - removes need for patches:
+      + fix-gcc4.3-build.patch
+      + fix-gcc4.4-build.patch
+      + gcc_ftbfs.patch
+      + link-against-dl.patch
+      + missin_library.diff
+  * change to dh-7 build system
+  * Switch to dpkg-source 3.0 (quilt) format
+  * Bump Standards Version to 3.9.2. (No changes needed).
+  * remove debugging package
+  * renamed to use soversion in package name
+  * use --as-needed for linking
+  * wrap-and-sort debian/
+  * multiarch package
+  * bump compat to 9
 
- -- Denis Chapligin <chollya@satgate.net>  Tue, 05 Feb 2013 10:44:40 +0300
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 04 Sep 2010 01:15:53 +0200
+
+soci (3.0.0+cvs20081223-4) unstable; urgency=low
+
+  * QA upload.
+  * gcc_ftbfs.patch - Include missing headers. (Closes: #549640).
+    + Thanks to Nobuhiro Iwamatsu for the patch!
+  * Add README.source for quilt.
+  * Bump Standards Version to 3.8.3. (No changes needed).
+
+ -- Barry deFreese <bdefreese@debian.org>  Fri, 09 Oct 2009 11:21:18 -0400
+
+soci (3.0.0+cvs20081223-3) unstable; urgency=low
+
+  [ Marco Rodrigues ]
+  * QA upload.
+  * Fix FTBFS because of GCC 4.4 (Closes: #525719).
+
+  [ Christoph Berg ]
+  * Set -dbg package Section to debug.
+
+ -- Christoph Berg <myon@debian.org>  Sun, 21 Jun 2009 13:05:28 +0200
+
+soci (3.0.0+cvs20081223-2) unstable; urgency=low
+
+  * QA upload.
+  * Changing maintainer to QA group 
+  * Update Standards Version (no changes)
+  * Migrate to dh_prep instead of dh_clean -k
+
+ -- Neil Williams <codehelp@debian.org>  Fri, 03 Apr 2009 11:04:01 +0100
+
+soci (3.0.0+cvs20081223-1) experimental; urgency=low
+
+  * New CVS snapshot. Closes: #509453.
+  * debian/control:
+    - New maintainer.
+    - Update Standards-Version to 3.8.0. (No changes).
+    - Update compat version to 7 and upgrade debhelper Build-Depends.
+    - Update Vcs-* fields.
+  * debian/rules:
+    - Migrate away from cdbs.
+  * debian/patches:
+    - Migrate to quilt.
+    - sqlite-namespace.patch - Removed (Gone upstream).
+    - sqlite-common-ctime.patch - Removed (Gone upstream).
+    - postgressql-standard-use-type.patch - Removed (No longer needed).
+    - postgressql-common-ctime.patch - Removed (Gone upstream).
+    - mysql-common-ctime.patch - Removed (Gone upstream).
+    - missing-headers.patch - Removed (No longer needed).
+    - link-against-dl.patch - Refreshed.
+    - fix-gcc4.3-build.patch - Fix build with gcc 4.3.
+    - fix-gcc4.4-build.patch - Fix build with gcc 4.4. (Patch from Martin
+      Michlmayr <tbm@cyrius.com>) Closes: #504907
+
+ -- Bradley Smith <bradsmith@debian.org>  Tue, 23 Dec 2008 11:13:58 +0000
+
+soci (2.2.0-4) unstable; urgency=low
+
+  * Fix soci FTBFS on mips (Closes: #481499)
+  Thanks to Thiemo Seufer for the patch. 
+
+ -- Neil Williams <codehelp@debian.org>  Sat, 17 May 2008 08:23:41 +0100
+
+soci (2.2.0-3) unstable; urgency=low
+
+  * FTBFS: auto_ptr with no type (Closes: #478504)
+    Add more missing C++ headers to soci.h and std::tm
+    definition (<ctime>) to each backend common.h.
+
+ -- Neil Williams <codehelp@debian.org>  Tue, 06 May 2008 22:00:19 +0100
+
+soci (2.2.0-2) unstable; urgency=low
+
+  * soci - FTBFS: error: 'bad_cast' is not a member of 'std'
+    (incomplete fix, bug reopened).
+
+ -- Neil Williams <codehelp@debian.org>  Mon, 05 May 2008 00:18:09 +0100
+
+soci (2.2.0-1) unstable; urgency=low
+
+  * Initial release soci -- C++ Database Access Library (Closes: #476793)
+
+ -- Neil Williams <codehelp@debian.org>  Tue, 22 Apr 2008 11:31:19 +0100

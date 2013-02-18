@@ -1,23 +1,23 @@
 Source: soci
-Priority: extra
-Maintainer: Denis Chapligin <chollya@satgate.net>
-Build-Depends: quilt,
- patchutils (>= 0.2.25),
- cdbs (>= 0.4.27),
- debhelper (>= 7.0.1),
- dh-buildinfo,
- cdbs (>= 0.4.69~),
- devscripts (>= 2.10.7~), cmake, libboost-dev | libboost1.44-dev,
- libmysqlclient15-dev, libpq-dev, libsqlite3-dev, unixodbc-dev
-Standards-Version: 3.7.3
 Section: libs
-Homepage: http://soci.sourceforge.net
-
-Package: libsoci-core-gcc
 Priority: optional
-Section: libs
+Maintainer: Julian Taylor <jtaylor.debian@googlemail.com>
+Build-Depends: cmake (>= 2.6),
+               debhelper (>= 8.1.3~),
+               libboost-date-time-dev,
+               libboost-dev,
+               libmysqlclient-dev,
+               libpq-dev,
+               libsqlite3-dev,
+               unixodbc-dev
+Standards-Version: 3.9.2
+Homepage: http://soci.sourceforge.net/
+
+Package: libsoci-core3.2
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: C++ Database Access Library (core)
  Database access library for C++ that makes the illusion of
  embedding SQL queries in the regular C++ code, staying entirely
@@ -25,11 +25,11 @@ Description: C++ Database Access Library (core)
  .
  This package provides the shared library.
 
-Package: libsoci-core-gcc-dev
-Priority: optional
+Package: libsoci3.2-dev
 Section: libdevel
 Architecture: any
-Depends: libsoci-core-gcc (= ${binary:Version}), ${misc:Depends}
+Multi-Arch: same
+Depends: libsoci-core3.2 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Database Access Library (devel)
  Database access library for C++ that makes the illusion of
  embedding SQL queries in the regular C++ code, staying entirely
@@ -37,23 +37,11 @@ Description: C++ Database Access Library (devel)
  .
  This package provides the development headers.
 
-Package: libsoci-core-gcc-dbg
-Priority: extra
-Section: libs
+Package: libsoci-mysql3.2
 Architecture: any
-Depends: libsoci-core-gcc (= ${binary:Version}), ${misc:Depends}
-Description: C++ Database Access Library (debug symbols)
- Database access library for C++ that makes the illusion of
- embedding SQL queries in the regular C++ code, staying entirely
- within Standard C++.
- .
- This package provides the debugging symbols.
-
-Package: libsoci-mysql-gcc
-Priority: optional
-Section: libs
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: C++ Database Access Library (MySQL backend)
  Database access library for C++ that makes the illusion of
  embedding SQL queries in the regular C++ code, staying entirely
@@ -61,11 +49,11 @@ Description: C++ Database Access Library (MySQL backend)
  .
  This package provides the MySQL backend.
 
-Package: libsoci-sqlite3-gcc
-Priority: optional
-Section: libs
+Package: libsoci-sqlite3-3.2
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: C++ Database Access Library (SQLite3 backend)
  Database access library for C++ that makes the illusion of
  embedding SQL queries in the regular C++ code, staying entirely
@@ -73,11 +61,11 @@ Description: C++ Database Access Library (SQLite3 backend)
  .
  This package provides the SQLite3 backend.
 
-Package: libsoci-postgresql-gcc
-Priority: optional
-Section: libs
+Package: libsoci-postgresql3.2
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: C++ Database Access Library (PostgreSQL backend)
  Database access library for C++ that makes the illusion of
  embedding SQL queries in the regular C++ code, staying entirely
@@ -85,11 +73,12 @@ Description: C++ Database Access Library (PostgreSQL backend)
  .
  This package provides the PostgreSQL backend.
 
-Package: libsoci-odbc-gcc
-Priority: optional
-Section: libs
+Package: libsoci-odbc3.2
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Priority: optional
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: C++ Database Access Library (PostgreSQL backend)
  Database access library for C++ that makes the illusion of
  embedding SQL queries in the regular C++ code, staying entirely
@@ -98,9 +87,8 @@ Description: C++ Database Access Library (PostgreSQL backend)
  This package provides the ODBC backend.
 
 Package: libsoci-doc
-Priority: optional
-Section: libs
 Architecture: all
+Depends: ${misc:Depends}
 Description: C++ Database Access Library (Documentation)
  Database access library for C++ that makes the illusion of
  embedding SQL queries in the regular C++ code, staying entirely
