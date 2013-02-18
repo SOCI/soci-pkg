@@ -1,0 +1,11 @@
+usr/include/*
+usr/lib/*/libsoci_core.a
+usr/lib/*/libsoci_core.so
+usr/lib/*/libsoci_mysql.a
+usr/lib/*/libsoci_mysql.so
+usr/lib/*/libsoci_odbc.a
+usr/lib/*/libsoci_odbc.so
+usr/lib/*/libsoci_postgresql.a
+usr/lib/*/libsoci_postgresql.so
+usr/lib/*/libsoci_sqlite3.a
+usr/lib/*/libsoci_sqlite3.so
