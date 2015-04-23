@@ -1,3 +1,9 @@
+soci (3.2.3-1) unstable; urgency=low
+
+  * Upstream version bump.
+
+ -- Benjamin Blundell <b.blundell@qmul.ac.uk>  Thu, 23 Apr 2015 16:00:00 +0000
+
 soci (3.2.2-1) unstable; urgency=low
 
   * Upstream version bump.

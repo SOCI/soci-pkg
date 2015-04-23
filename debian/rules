@@ -3,7 +3,21 @@
 DEB_SRCDIR=src
 DEB_CMAKE_INSTALL_PREFIX=/usr
 
-include /usr/share/cdbs/1/rules/patchsys-quilt.mk
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/cmake.mk
-include /usr/share/cdbs/1/rules/utils.mk
+#include /usr/share/cdbs/1/rules/debhelper.mk
+#include /usr/share/cdbs/1/class/cmake.mk
+#include /usr/share/cdbs/1/rules/utils.mk
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+# This has to be exported to make some magic below work.
+export DH_OPTIONS
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+VERSION := $(shell dpkg-parsechangelog | sed -n 's/^Version: \(.*\)-.*/\1/p')
+
+%:
+	dh $@ --buildsystem cmake
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DPACKAGE_MANAGER=ON -DCMAKE_INSTALL_PREFIX=/usr \
