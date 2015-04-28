@@ -13,7 +13,7 @@ Standards-Version: 3.7.3
 Section: libs
 Homepage: http://soci.sourceforge.net
 
-Package: libsoci-core-gcc
+Package: libsoci-core
 Priority: optional
 Section: libs
 Architecture: any
@@ -25,11 +25,11 @@ Description: C++ Database Access Library (core)
  .
  This package provides the shared library.
 
-Package: libsoci-core-gcc-dev
+Package: libsoci-core-dev
 Priority: optional
 Section: libdevel
 Architecture: any
-Depends: libsoci-core-gcc (= ${binary:Version}), ${misc:Depends}
+Depends: libsoci-core (= ${binary:Version}), ${misc:Depends}
 Description: C++ Database Access Library (devel)
  Database access library for C++ that makes the illusion of
  embedding SQL queries in the regular C++ code, staying entirely
@@ -37,11 +37,11 @@ Description: C++ Database Access Library (devel)
  .
  This package provides the development headers.
 
-Package: libsoci-core-gcc-dbg
+Package: libsoci-core-dbg
 Priority: extra
 Section: libs
 Architecture: any
-Depends: libsoci-core-gcc (= ${binary:Version}), ${misc:Depends}
+Depends: libsoci-core (= ${binary:Version}), ${misc:Depends}
 Description: C++ Database Access Library (debug symbols)
  Database access library for C++ that makes the illusion of
  embedding SQL queries in the regular C++ code, staying entirely
@@ -49,7 +49,7 @@ Description: C++ Database Access Library (debug symbols)
  .
  This package provides the debugging symbols.
 
-Package: libsoci-mysql-gcc
+Package: libsoci-mysql
 Priority: optional
 Section: libs
 Architecture: any
@@ -61,7 +61,7 @@ Description: C++ Database Access Library (MySQL backend)
  .
  This package provides the MySQL backend.
 
-Package: libsoci-sqlite3-gcc
+Package: libsoci-sqlite3
 Priority: optional
 Section: libs
 Architecture: any
@@ -73,7 +73,7 @@ Description: C++ Database Access Library (SQLite3 backend)
  .
  This package provides the SQLite3 backend.
 
-Package: libsoci-postgresql-gcc
+Package: libsoci-postgresql
 Priority: optional
 Section: libs
 Architecture: any
@@ -85,7 +85,7 @@ Description: C++ Database Access Library (PostgreSQL backend)
  .
  This package provides the PostgreSQL backend.
 
-Package: libsoci-firebird-gcc
+Package: libsoci-firebird
 Priority: optional
 Section: libs
 Architecture: any
@@ -97,7 +97,7 @@ Description: C++ Database Access Library (Firebird backend)
  .
  This package provides the Firebird backend.
 
-Package: libsoci-odbc-gcc
+Package: libsoci-odbc
 Priority: optional
 Section: libs
 Architecture: any
