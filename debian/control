@@ -1,9 +1,7 @@
 Source: soci
 Priority: extra
 Maintainer: Denis Chapligin <chollya@satgate.net>
-Build-Depends: quilt,
- patchutils (>= 0.2.25),
- cdbs (>= 0.4.27),
+Build-Depends: 
  debhelper,
  dh-buildinfo,
  cdbs (>= 0.4.69~),

@@ -20,4 +20,4 @@ VERSION := $(shell dpkg-parsechangelog | sed -n 's/^Version: \(.*\)-.*/\1/p')
 	dh $@ --buildsystem cmake
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DPACKAGE_MANAGER=ON -DCMAKE_INSTALL_PREFIX=/usr \
+	dh_auto_configure -- -DPACKAGE_MANAGER=ON -DCXX_C11=ON -DCMAKE_INSTALL_PREFIX=/usr \
