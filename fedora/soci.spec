@@ -21,20 +21,19 @@
 ##
 #
 Name:           soci
-Version:        3.1.0
-Release:        4%{?dist}
+Version:        3.2.3
+Release:        1%{?dist}
 
 Summary:        The database access library for C++ programmers
 
 Group:          System Environment/Libraries
 License:        Boost
 URL:            http://%{name}.sourceforge.net
-Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.zip
+Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
 BuildRequires:  cmake
 BuildRequires:  boost-devel
-BuildRequires:  libtool
 
 %description
 %{name} is a C++ database access library that provides the
@@ -197,10 +196,11 @@ library. The documentation is the same as at the %{name} web page.
 
 # Rename change-log and license file, so that they comply with
 # packaging standard
+mv README.md README
 mv CHANGES ChangeLog
 mv LICENSE_1_0.txt COPYING
-echo "2011-10-08:" > NEWS
-echo "- Version 3.1.0" >> NEWS
+echo "2013-04-13:" > NEWS
+echo "- Version 3.2.1" >> NEWS
 echo "- See the ChangeLog file for more details." >> NEWS
 
 
@@ -350,6 +350,36 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Apr 09 2015 Fedora Release Monitoring <release-monitoring@fedoraproject.org> - 3.2.3-1
+- Update to 3.2.3 (#1210126)
+
+* Tue Jan 27 2015 Petr Machata <pmachata@redhat.com> - 3.2.2-5
+- Rebuild for boost 1.57.0
+
+* Mon Aug 18 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.2.2-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
+* Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.2.2-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
+* Fri May 23 2014 Petr Machata <pmachata@redhat.com> - 3.2.2-2
+- Rebuild for boost 1.55.0
+
+* Sat Oct 19 2013 Denis Arnaud <denis.arnaud_fedora@m4x.org> 3.2.2-1
+- Upstream integration
+
+* Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.2.1-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
+* Tue Jul 30 2013 Petr Machata <pmachata@redhat.com> - 3.2.1-2
+- Rebuild for boost 1.54.0
+
+* Mon May 20 2013 Denis Arnaud <denis.arnaud_fedora@m4x.org> 3.2.1-1
+- Upstream integration
+
+* Fri Feb 15 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.1.0-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Sat Jul 21 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.1.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
