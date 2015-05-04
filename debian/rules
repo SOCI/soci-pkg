@@ -20,4 +20,11 @@ VERSION := $(shell dpkg-parsechangelog | sed -n 's/^Version: \(.*\)-.*/\1/p')
 	dh $@ --buildsystem cmake
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DPACKAGE_MANAGER=ON -DCMAKE_INSTALL_PREFIX=/usr \
+	dh_auto_configure -- ../src -DPACKAGE_MANAGER=ON -DLIBDIR=/usr/lib/$(DEB_HOST_MULTIARCH) -DCMAKE_INSTALL_PREFIX=/usr
+
+# If you want to make use of more than one core (replace the 6 with your number of cores)
+#override_dh_auto_build:
+#	dh_auto_build -- -j6
+
+# If you want to disable test runs (if you officially maintain, you should not)
+#override_dh_auto_test:

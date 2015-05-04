@@ -1,1 +1,1 @@
-debian/tmp/usr/lib/libsoci_sqlite3*.so*
+debian/tmp/usr/lib/*/libsoci_sqlite3*.so*
