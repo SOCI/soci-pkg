@@ -37,7 +37,7 @@ Description: C++ Database Access Library (devel)
 
 Package: libsoci-core-dbg
 Priority: extra
-Section: libs
+Section: debug
 Architecture: any
 Depends: libsoci-core (= ${binary:Version}), ${misc:Depends}
 Description: C++ Database Access Library (debug symbols)
@@ -109,7 +109,7 @@ Description: C++ Database Access Library (PostgreSQL backend)
 
 Package: libsoci-doc
 Priority: optional
-Section: libs
+Section: doc
 Architecture: all
 Description: C++ Database Access Library (Documentation)
  Database access library for C++ that makes the illusion of

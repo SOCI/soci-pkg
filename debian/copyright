@@ -1,6 +1,5 @@
-This package was downloaded from https://github.com/SOCI/soci
-
 Files: debian/*
+Source: /usr/share/common-licenses/GPL-3
 Licence: GPL-3+
 Copyright: 2008 Neil Williams <codehelp@debian.org>. 2013 Denis Chapligin <chollya@satgate.net>
 
@@ -9,6 +8,7 @@ Copyright:  2004-2013 Maciej Sobczak, Stephen Hutton,
                       David Courtney, Pawel Aleksander Fedorynski,
                       Rafal Bobrowski, Mateusz Loskot
 Licence: Boost
+
 
     Boost Software License - Version 1.0 - August 17th, 2003
 
