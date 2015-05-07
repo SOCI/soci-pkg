@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 debian/tmp/usr/lib64/libsoci_mysql*.so* /usr/lib
+=======
+debian/tmp/usr/lib/*/libsoci_mysql*.so*
+>>>>>>> 8457bd389641d0fe34ea14e0911ab6033cbe0f38

@@ -1,1 +1,2 @@
-debian/tmp/usr/lib64/libsoci_postgresql*.so* /usr/lib
+debian/tmp/usr/lib/*/libsoci_postgresql*.so*
+

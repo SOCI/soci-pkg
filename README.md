@@ -5,7 +5,7 @@ SOCI packaging configurations
 
 ## Debian ##
 
-Just copy the debian/ directory to your soci sources directory and run dpkg-buildpackage -rfakeroot
+Just copy the debian/ directory to your soci directory and run dpkg-buildpackage -rfakeroot
 
 debian/control is generated from debian/control.in manually, by calling `DEB_AUTO_UPDATE_DEBIAN_CONTROL=yes fakeroot debian/rules clean`.
 
